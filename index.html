@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Jane 💛</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#fff9c4,#ffe066,#fff3bf);
+    min-height:100vh;
+    overflow-x:hidden;
+    color:#333;
+}
+
+.hearts{
+    position:fixed;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:0;
+}
+
+.heart{
+    position:absolute;
+    animation:float 8s linear infinite;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+    20%{
+        opacity:1;
+    }
+    to{
+        transform:translateY(-100px);
+        opacity:0;
+    }
+}
+
+.container{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    padding:30px 20px;
+}
+
+.hero{
+    margin-top:20px;
+}
+
+.hero h1{
+    font-size:3rem;
+}
+
+.hero p{
+    margin-top:10px;
+    font-size:1.2rem;
+}
+
+.photo{
+    width:300px;
+    height:300px;
+    object-fit:cover;
+    border-radius:50%;
+    border:8px solid white;
+    margin:30px auto;
+    display:block;
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+.card{
+    background:white;
+    max-width:750px;
+    margin:25px auto;
+    padding:30px;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+.card h2{
+    margin-bottom:15px;
+}
+
+.counter{
+    font-size:1.5rem;
+    font-weight:bold;
+    color:#d4a017;
+}
+
+button{
+    background:#ffd43b;
+    border:none;
+    padding:15px 25px;
+    border-radius:30px;
+    font-size:1rem;
+    cursor:pointer;
+    margin-top:15px;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+.hidden{
+    display:none;
+}
+
+#letter{
+    margin-top:20px;
+    line-height:1.9;
+    text-align:left;
+}
+
+#message{
+    margin-top:20px;
+    font-size:1.3rem;
+}
+
+.footer{
+    margin:40px 0;
+    opacity:.8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hearts" id="hearts"></div>
+
+<div class="container">
+
+    <div class="hero">
+        <h1>For Jane 💛🌻</h1>
+        <p>The best friend and girlfriend ever.</p>
+    </div>
+
+    <img src="Screenshot 2026-06-06 004302.png" class="photo" alt="Jane">
+
+    <div class="card">
+        <h2>🌻 Time Together</h2>
+        <p>Every day with you is special my love.</p>
+        <div class="counter" id="daysTogether"></div>
+    </div>
+
+    <div class="card">
+        <h2>💌 A MINI Letter For You</h2>
+
+        <button onclick="showLetter()">
+            Open My Letter 💛
+        </button>
+
+        <div id="letter" class="hidden">
+
+            Dear Jane 💛,
+
+            <br><br>
+
+            Ever since we started dating again on May 8th, you've brought so much happiness into my life.
+
+            <br><br>
+
+            There are so many things I love about you, but some of my favorites are your smile, the way you make me feel comfortable no matter what, and the way you look at me with your beautiful eyes.
+
+            <br><br>
+
+            I love the way you hold my hand and how safe and happy I feel when I'm with you.
+
+            <br><br>
+
+            There is alottttt more but ill limit it cause i want you to see this before you sleep (i hope)
+
+            <br><br>
+
+            You're different from anyone I've ever met. You're kind, caring, funny, and genuinely the best girlfriend I could ever ask for.
+
+            <br><br>
+            Im glad we got back together and i really hope we work out. I'll promise to try my best.
+
+            <br><br>
+
+            Every time I see a flower, I think about how bright and beautiful you make everything around you feel.
+
+            <br><br>
+
+            Thank you for being you.
+
+            <br><br>
+
+            I know we're still writing our story, but I'm grateful that I get to write it with you.
+
+            <br><br>
+
+            Thank you for letting me back into your life my baby, i promise we will make it together.
+
+            <br><br>
+
+            I Love You Always,
+
+            <br>
+
+            Ore 💛🌻
+
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>✨ Things I Love About You</h2>
+
+        <button onclick="surprise()">
+            Click Me 💛
+        </button>
+
+        <h3 id="message"></h3>
+    </div>
+
+    <div class="card">
+        <h2>🎵Song</h2>
+
+        <p>
+            So Easy (To Fall In Love) - Olivia Dean
+        </p>
+            i didnt have enough time to put this as a miniplayer so just play the song and do everything again 💛
+        </p>
+
+        <button onclick="window.open('https://www.youtube.com/results?search_query=Olivia+Dean+So+Easy+To+Fall+In+Love')">
+            Play The Song 🎵
+        </button>
+    </div>
+
+    <div class="footer">
+        Made with 💛 for Jane 🌻
+    </div>
+
+</div>
+
+<script>
+
+const startDate = new Date("2026-05-08");
+
+function updateDays(){
+
+    const today = new Date();
+
+    const diff = today - startDate;
+
+    const days = Math.floor(diff/(1000*60*60*24));
+
+    document.getElementById("daysTogether").innerHTML =
+        days + " days together 💛";
+}
+
+updateDays();
+
+function showLetter(){
+    document.getElementById("letter").classList.remove("hidden");
+}
+
+const messages = [
+    "Your smile is my favorite thing 💛",
+    "You make me feel comfortable being myself 🌻",
+    "Your eyes are so pretty ✨",
+    "Holding your hand makes everything better 🤝💛",
+    "You're different in the best way possible 🌼",
+    "You're the best girlfriend ever 💕",
+    "I fall for you a little more every day 💛",
+    "You make ordinary days feel special 🌻",
+    "My favorite place is wherever you are 💖",
+    "Jane, you're amazing ✨"
+    ,"You're the bestest friend everr"
+    ,"I love how you always know how to make me laugh"
+    ,"I love your sense of humor and how we can laugh together about anything."
+    ,"I love the memories we've created together."
+    ,"I love how we can get through challenges together."
+    ,"I love your passion for the things you care about."
+    ,"I love all the little things that make you uniquely you."
+    ,"What I love most about you is how you make me feel. You make me feel understood, supported, and genuinely happy. I love your kindness, your smile, your sense of humor, and the way you always know how to make even a bad day better. Being with you makes my life richer, and I'm grateful for you every day"
+
+];
+
+function surprise(){
+
+    const random =
+    messages[Math.floor(Math.random()*messages.length)];
+
+    document.getElementById("message").innerHTML = random;
+}
+
+function createHeart(){
+
+    const heart = document.createElement("div");
+
+    const icons = ["💛","🌻","🌼","✨"];
+
+    heart.classList.add("heart");
+
+    heart.innerHTML =
+    icons[Math.floor(Math.random()*icons.length)];
+
+    heart.style.left =
+    Math.random()*100 + "vw";
+
+    heart.style.fontSize =
+    (20 + Math.random()*25) + "px";
+
+    heart.style.animationDuration =
+    (5 + Math.random()*5) + "s";
+
+    document.getElementById("hearts")
+    .appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },10000);
+}
+
+setInterval(createHeart,300);
+
+</script>
+
+</body>
+</html>
